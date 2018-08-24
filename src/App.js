@@ -37,6 +37,39 @@ class App extends Component {
         break
     }
   }
+  handleKeyPress = (e) => {
+    const possibleInputs = {
+      '0': '0',
+      '1': '1',
+      '2': '2',
+      '3': '3',
+      '4': '4',
+      '5': '5',
+      '6': '6',
+      '7': '7',
+      '8': '8',
+      '9': '9',
+      '+': '+',
+      '-': '-',
+      '/': '/',
+      '*': '*',
+      'Backspace': ''
+    }
+    let newOperations = null;
+    if (possibleInputs.hasOwnProperty(e.key)) {
+      newOperations = update(this.state.operations, {
+        $push: [possibleInputs[e.key]],
+      })
+
+      this.setState({
+        operations: newOperations
+      })
+    } else if(e.key === 'Enter' || e.key === '=') {
+      this.calculateOperations();
+    } else if(e.key === '%') {
+      this.calculatePercentage();
+    }
+  }
   calculatePercentage = () => {
     let result = this.state.operations.join('');
     if(result) {
@@ -68,7 +101,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App" onKeyPress={this.handleKeyPress}>
         <header className="App-header">
           <h1 className="App-title">React Calculator</h1>
         </header>

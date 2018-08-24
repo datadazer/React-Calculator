@@ -72,6 +72,11 @@ button {
   border: 1px solid #9bacbd59;
   font-family: lato, sans-serif;
   touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button:focus {
