@@ -70,6 +70,7 @@ button {
   padding: 24px;
   font-size: 36px;
   border: 1px solid #9bacbd59;
+  font-family: lato, sans-serif;
 }
 
 button:focus {
