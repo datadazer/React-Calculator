@@ -1,11 +1,46 @@
 import React, { Component } from 'react';
 import './App.css';
-import CalcButton from './CalcButton'
+import CalcButton from './CalcButton';
+import Display from './Display';
+import update from 'immutability-helper';
+import * as math from 'mathjs';
 
 class App extends Component {
   constructor() {
     super();
     this.state = { operations: [] }
+  }
+  handleClick = (e) => {
+    const value = e.target.getAttribute('data-value')
+    switch (value) {
+      case 'clear':
+        this.setState({
+          operations: [],
+        })
+        break
+      case 'equal':
+        this.calculateOperations()
+        break
+      default:
+        const newOperations = update(this.state.operations, {
+          $push: [value],
+        })
+        this.setState({
+          operations: newOperations,
+        })
+        break
+    }
+  }
+  calculateOperations = () => {
+    let result = this.state.operations.join('')
+    if (result) {
+      result = math.eval(result)
+      result = math.format(result, { precision: 13 })
+      result = String(result)
+      this.setState({
+        operations: [result],
+      })
+    }
   }
   render() {
     return (
@@ -15,33 +50,33 @@ class App extends Component {
         </header>
         <div className="calculator">
           <div className="display">
-            <span className="display-content">2+2</span>
+            <Display data={this.state.operations}/>
           </div>
           <div className="input-section">
-            <CalcButton className="grey-btn" symbol="C"/>
-            <button className="grey-btn">√</button>
-            <button className="grey-btn">%</button>
-            <button className="blue-btn">÷</button>
+            <CalcButton onClick={this.handleClick} className="grey-btn" value="clear" symbol="C"/>
+            <CalcButton onClick={this.handleClick} className="grey-btn" value="√" symbol="√"/>
+            <CalcButton onClick={this.handleClick} className="grey-btn" value="%" symbol="%"/>
+            <CalcButton onClick={this.handleClick} className="blue-btn" value="/" symbol="÷"/>
 
-            <button className="white-btn">7</button>
-            <button className="white-btn">8</button>
-            <button className="white-btn">9</button>
-            <button className="blue-btn">x</button>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="7" symbol="7"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="8" symbol="8"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="9" symbol="9"/>
+            <CalcButton onClick={this.handleClick} className="blue-btn" value="*" symbol="x"/>
 
-            <button className="white-btn">4</button>
-            <button className="white-btn">5</button>
-            <button className="white-btn">6</button>
-            <button className="blue-btn">-</button>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="4" symbol="4"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="5" symbol="5"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="6" symbol="6"/>
+            <CalcButton onClick={this.handleClick} className="blue-btn" value="-" symbol="-"/>
 
-            <button className="white-btn">1</button>
-            <button className="white-btn">2</button>
-            <button className="white-btn">3</button>
-            <button className="blue-btn">+</button>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="1" symbol="1"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="2" symbol="2"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="3" symbol="3"/>
+            <CalcButton onClick={this.handleClick} className="blue-btn" value="+" symbol="+"/>
 
-            <button className="white-btn">0</button>
-            <button className="white-btn">&nbsp;</button>
-            <button className="white-btn">.</button>
-            <button className="orange-btn">=</button>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="0" symbol="0"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="null" symbol="&nbsp;"/>
+            <CalcButton onClick={this.handleClick} className="white-btn" value="." symbol="."/>
+            <CalcButton onClick={this.handleClick} className="orange-btn" value="equal" symbol="="/>
           </div>
         </div>
       </div>

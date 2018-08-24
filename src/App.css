@@ -27,6 +27,7 @@
   height: 100px;
   border: 1px solid #9bacbd59;
   text-align: right;
+  overflow: auto;
 }
 
 .display-content {
