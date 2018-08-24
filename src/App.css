@@ -38,7 +38,7 @@
 }
 
 .input-section {
-  background-color: lightyellow;
+  background-color: #fff;
 }
 
 .calculator {
@@ -71,6 +71,17 @@ button {
   font-size: 36px;
   border: 1px solid #9bacbd59;
 }
+
+button:focus {
+  outline:0;
+}
+
+button:hover {
+  background-color:rgba(0, 0, 0, 0.95);
+  color: #fff;
+  cursor: pointer;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

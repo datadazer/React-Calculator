@@ -34,6 +34,10 @@ class App extends Component {
   calculateOperations = () => {
     let result = this.state.operations.join('')
     if (result) {
+      if(result.indexOf("√") > -1) {
+        result = result.replace("√", "sqrt(");
+        result = result + ")";
+      }
       result = math.eval(result)
       result = math.format(result, { precision: 13 })
       result = String(result)
