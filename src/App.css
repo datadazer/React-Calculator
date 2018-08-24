@@ -28,6 +28,8 @@
   border: 1px solid #9bacbd59;
   text-align: right;
   overflow: auto;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .display-content {
@@ -39,6 +41,9 @@
 
 .input-section {
   background-color: #fff;
+  border: 1px solid #9bacbd59;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .calculator {
