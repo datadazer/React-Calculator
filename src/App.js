@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CalcButton from './CalcButton'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { operations: [] }
+  }
   render() {
     return (
       <div className="App">
@@ -10,9 +14,11 @@ class App extends Component {
           <h1 className="App-title">React Calculator</h1>
         </header>
         <div className="calculator">
-          <div className="display">test</div>
+          <div className="display">
+            <span className="display-content">2+2</span>
+          </div>
           <div className="input-section">
-            <button className="grey-btn">C</button>
+            <CalcButton className="grey-btn" symbol="C"/>
             <button className="grey-btn">√</button>
             <button className="grey-btn">%</button>
             <button className="blue-btn">÷</button>
