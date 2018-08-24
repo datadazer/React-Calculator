@@ -20,7 +20,7 @@ class App extends Component {
             <button class="white-btn">7</button>
             <button class="white-btn">8</button>
             <button class="white-btn">9</button>
-            <button class="blue-btn">X</button>
+            <button class="blue-btn">x</button>
 
             <button class="white-btn">4</button>
             <button class="white-btn">5</button>
