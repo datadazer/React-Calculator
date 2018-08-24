@@ -24,6 +24,9 @@ class App extends Component {
       case '%':
         this.calculatePercentage();
         break
+      case '√':
+        this.calculateSqrt();
+        break
       default:
         const newOperations = update(this.state.operations, {
           $push: [value],
@@ -41,13 +44,16 @@ class App extends Component {
       this.evaluateAndFormat(result);
     }
   }
+  calculateSqrt = () => {
+    let result = this.state.operations.join('');
+    if(result) {
+      result = "sqrt("+ result + ")";
+      this.evaluateAndFormat(result);
+    }
+  }
   calculateOperations = () => {
     let result = this.state.operations.join('');
     if(result) {
-      if(result.indexOf("√") > -1) {
-        result = result.replace("√", "sqrt(");
-        result = result + ")";
-      }
       this.evaluateAndFormat(result);
     }
   }
