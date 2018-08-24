@@ -25,6 +25,7 @@
 .display {
   background-color: #fff;
   height: 100px;
+  border: 1px solid #9bacbd59;
 }
 
 .input-section {
@@ -58,8 +59,8 @@ button {
   background-color: aqua;
   width: 25%;
   min-height: 90px;
-  padding: 35px;
-  font-size: 24px;
+  padding: 24px;
+  font-size: 36px;
   border: 1px solid #9bacbd59;
 }
 

@@ -9,33 +9,33 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">React Calculator</h1>
         </header>
-        <div class="calculator">
-          <div class="display">test</div>
-          <div class="input-section">
-            <button class="grey-btn">C</button>
-            <button class="grey-btn">+/-</button>
-            <button class="grey-btn">%</button>
-            <button class="blue-btn">÷</button>
+        <div className="calculator">
+          <div className="display">test</div>
+          <div className="input-section">
+            <button className="grey-btn">C</button>
+            <button className="grey-btn">√</button>
+            <button className="grey-btn">%</button>
+            <button className="blue-btn">÷</button>
 
-            <button class="white-btn">7</button>
-            <button class="white-btn">8</button>
-            <button class="white-btn">9</button>
-            <button class="blue-btn">x</button>
+            <button className="white-btn">7</button>
+            <button className="white-btn">8</button>
+            <button className="white-btn">9</button>
+            <button className="blue-btn">x</button>
 
-            <button class="white-btn">4</button>
-            <button class="white-btn">5</button>
-            <button class="white-btn">6</button>
-            <button class="blue-btn">-</button>
+            <button className="white-btn">4</button>
+            <button className="white-btn">5</button>
+            <button className="white-btn">6</button>
+            <button className="blue-btn">-</button>
 
-            <button class="white-btn">1</button>
-            <button class="white-btn">2</button>
-            <button class="white-btn">3</button>
-            <button class="blue-btn">+</button>
+            <button className="white-btn">1</button>
+            <button className="white-btn">2</button>
+            <button className="white-btn">3</button>
+            <button className="blue-btn">+</button>
 
-            <button class="white-btn">0</button>
-            <button class="white-btn">&nbsp;</button>
-            <button class="white-btn">.</button>
-            <button class="orange-btn">=</button>
+            <button className="white-btn">0</button>
+            <button className="white-btn">&nbsp;</button>
+            <button className="white-btn">.</button>
+            <button className="orange-btn">=</button>
           </div>
         </div>
       </div>
