@@ -7,12 +7,37 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">React Calculator</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div class="calculator">
+          <div class="display">test</div>
+          <div class="input-section">
+            <button class="grey-btn">C</button>
+            <button class="grey-btn">+/-</button>
+            <button class="grey-btn">%</button>
+            <button class="blue-btn">÷</button>
+
+            <button class="white-btn">7</button>
+            <button class="white-btn">8</button>
+            <button class="white-btn">9</button>
+            <button class="blue-btn">X</button>
+
+            <button class="white-btn">4</button>
+            <button class="white-btn">5</button>
+            <button class="white-btn">6</button>
+            <button class="blue-btn">-</button>
+
+            <button class="white-btn">1</button>
+            <button class="white-btn">2</button>
+            <button class="white-btn">3</button>
+            <button class="blue-btn">+</button>
+
+            <button class="white-btn">0</button>
+            <button class="white-btn">&nbsp;</button>
+            <button class="white-btn">.</button>
+            <button class="orange-btn">=</button>
+          </div>
+        </div>
       </div>
     );
   }

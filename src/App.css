@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 50px;
   padding: 20px;
   color: white;
 }
@@ -20,6 +20,47 @@
 
 .App-intro {
   font-size: large;
+}
+
+.display {
+  background-color: #fff;
+  height: 100px;
+}
+
+.input-section {
+  background-color: lightyellow;
+}
+
+.calculator {
+  max-width: 400px;
+  margin: auto;
+  padding: 10px;
+}
+
+.white-btn {
+  background-color: #fdfdfd;
+}
+
+.grey-btn {
+  background-color: #f5f5f5;
+}
+
+.blue-btn {
+  background-color: #3c4c5c;
+  color: #fff;
+}
+
+.orange-btn {
+  background-color: orange;
+}
+
+button {
+  background-color: aqua;
+  width: 25%;
+  min-height: 90px;
+  padding: 35px;
+  font-size: 24px;
+  border: 1px solid #9bacbd59;
 }
 
 @keyframes App-logo-spin {
