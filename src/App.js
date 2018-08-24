@@ -19,7 +19,10 @@ class App extends Component {
         })
         break
       case 'equal':
-        this.calculateOperations()
+        this.calculateOperations();
+        break
+      case '%':
+        this.calculatePercentage();
         break
       default:
         const newOperations = update(this.state.operations, {
@@ -31,20 +34,31 @@ class App extends Component {
         break
     }
   }
+  calculatePercentage = () => {
+    let result = this.state.operations.join('');
+    if(result) {
+      result = result + "/100";
+      this.evaluateAndFormat(result);
+    }
+  }
   calculateOperations = () => {
-    let result = this.state.operations.join('')
+    let result = this.state.operations.join('');
     if(result) {
       if(result.indexOf("√") > -1) {
         result = result.replace("√", "sqrt(");
         result = result + ")";
       }
-      result = math.eval(result)
-      result = math.format(result, { precision: 13 })
-      result = String(result)
-      this.setState({
-        operations: [result],
-      })
+      this.evaluateAndFormat(result);
     }
+  }
+  evaluateAndFormat = (result) => {
+    result = math.eval(result);
+    result = math.format(result, { precision: 13 })
+    result = String(result)
+
+    this.setState({
+      operations: [result]
+    })
   }
   render() {
     return (
