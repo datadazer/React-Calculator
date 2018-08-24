@@ -33,7 +33,7 @@ class App extends Component {
   }
   calculateOperations = () => {
     let result = this.state.operations.join('')
-    if (result) {
+    if(result) {
       if(result.indexOf("√") > -1) {
         result = result.replace("√", "sqrt(");
         result = result + ")";
@@ -78,7 +78,7 @@ class App extends Component {
             <CalcButton onClick={this.handleClick} className="blue-btn" value="+" symbol="+"/>
 
             <CalcButton onClick={this.handleClick} className="white-btn" value="0" symbol="0"/>
-            <CalcButton onClick={this.handleClick} className="white-btn" value="null" symbol="&nbsp;"/>
+            <CalcButton className="white-btn" value="null" symbol="&nbsp;"/>
             <CalcButton onClick={this.handleClick} className="white-btn" value="." symbol="."/>
             <CalcButton onClick={this.handleClick} className="orange-btn" value="equal" symbol="="/>
           </div>
