@@ -10,7 +10,6 @@ class App extends Component {
     super();
     this.state = { operations: [] }
   }
-  console.log('test pull');
   handleClick = (e) => {
     const value = e.target.getAttribute('data-value')
     switch (value) {
