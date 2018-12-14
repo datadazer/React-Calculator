@@ -12,7 +12,6 @@ class App extends Component {
   }
   handleClick = (e) => {
     const value = e.target.getAttribute('data-value')
-    console.log("Test console log for committing from work laptop");
     switch (value) {
       case 'clear':
         this.setState({
